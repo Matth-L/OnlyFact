@@ -1,0 +1,68 @@
+.intro-container {
+    background: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+
+    h1 {
+        font-size: 36px;
+        color: #333;
+        margin: 0;
+    }
+
+    p {
+        font-size: 18px;
+        color: #555;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background 0.3s;
+    }
+
+    .btn+.btn {
+        margin-left: 10px;
+        /* Ajoutez de la marge entre les boutons */
+    }
+
+    &:hover .btn {
+        background: #0056b3;
+    }
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    /* 100% of viewport height */
+    overflow: hidden;
+    /* Hide overflow */
+}
+
+.app-sidebar {
+    width: 250px;
+    /* Adjust the width as needed */
+    background-color: #333;
+    /* Set a background color */
+    color: #fff;
+    /* Set text color */
+    padding: 16px;
+    /* Add padding */
+}
+
+.content {
+    flex: 1;
+    /* Grow to fill remaining space */
+    overflow: auto;
+    /* Allow content to scroll if it overflows */
+    padding: 16px;
+    /* Add padding */
+}
