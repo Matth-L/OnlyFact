@@ -17,5 +17,14 @@ public class Publication {
     @Column(name= "id_publication")
     private long id;
 
+    @Column(name= "title")
+    private String title;
     
+    @Column(name= "content")
+    private String content;
+    
+    @ManyToOne
+    @JoinColumn(name="author_id")
+    private Utilisateur author;
+     
 }

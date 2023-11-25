@@ -49,8 +49,61 @@ public class Utilisateur {
         this.motDePasse = motDePasse;
     }
 
-    //getter 
-    
-    //setter
-    
+    //getters
+    public Long getId() {
+        return this.id;
+    }
+
+    public String getNom() {
+        return this.nom;
+    }
+
+    public String getPrenom() {
+        return this.prenom;
+    }
+
+    public String getPseudo() {
+        return this.pseudo;
+    }
+
+    public String getMail() {
+        return this.mail;
+    }
+
+    public String getAdressePhysique() {
+        return this.adressePhysique;
+    }
+
+    public String getMotDePasse() {
+        return this.motDePasse;
+    }
+
+    //setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setPseudo(String pseudo) {
+        this.pseudo = pseudo;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setAdressePhysique(String adressePhysique) {
+        this.adressePhysique = adressePhysique;
+    }
+
+    public void setMotDePasse(String motDePasse) {
+        this.motDePasse = motDePasse;
+    } 
 }

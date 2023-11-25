@@ -22,4 +22,19 @@ public class UtilisateurController {
     public void ajouterUtilisateur(@RequestBody Utilisateur utilisateur) {
         utilisateurService.ajouterUtilisateur(utilisateur);
     }
+
+    @GetMapping("/utilisateur/{id}")
+    public Utilisateur getUtilisateur(@PathVariable Long id) {
+        return utilisateurService.getUtilisateur(id);
+    }
+    
+    @PostMapping("/utilisateur")
+    public Utilisateur updateUtilisateur(@RequestBody Utilisateur utilisateur) {
+        return utilisateurService.updateUtilisateur(utilisateur);
+    }
+    
+    @DeleteMapping("/utilisateur/{id}")
+    public void deleteUtilisateur(@PathVariable Long id) {
+        utilisateurService.deleteUtilisateur(id);
+    }
 }

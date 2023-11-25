@@ -20,4 +20,28 @@ public class UtilisateurService {
         utilisateurRepo.save(utilisateur);
     }
 
+    public Utilisateur getUtilisateur(Long id) {
+        Optional<Utilisateur> utilisateur = utilisateurRepo.findById(id);
+        if (utilisateur.isPresent()) {
+            return utilisateur.get();
+        } else {
+            throw new RuntimeException("Utilisateur not found for id: " + id);
+        }
+    }
+    
+    public Utilisateur updateUtilisateur(Utilisateur utilisateur) {
+        if (utilisateurRepo.existsById(utilisateur.getId())) {
+            return utilisateurRepo.save(utilisateur);
+        } else {
+            throw new RuntimeException("Utilisateur not found for id: " + utilisateur.getId());
+        }
+    }
+    
+    public void deleteUtilisateur(Long id) {
+        if (utilisateurRepo.existsById(id)) {
+            utilisateurRepo.deleteById(id);
+        } else {
+            throw new RuntimeException("Utilisateur not found for id: " + id);
+        }
+    }
 }
