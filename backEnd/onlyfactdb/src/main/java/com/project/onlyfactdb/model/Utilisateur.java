@@ -21,8 +21,7 @@ import lombok.NoArgsConstructor;
 public class Utilisateur {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id_utilisateur")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_utilisateur")
     private Long id;
     
     private String nom;
@@ -36,18 +35,18 @@ public class Utilisateur {
     private String motDePasse;
 
     //Attributs d'associations
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fk_utilisateur_id", referencedColumnName = "id_utilisateur")
-    private List<Publication> publications;
+    //@OneToMany(cascade = CascadeType.ALL)
+    //@JoinColumn(name = "fk_utilisateur_id", referencedColumnName = "id_utilisateur")
+   // private List<Publication> publications;
 
     //Constructeur
     public Utilisateur(String nom, String prenom, String pseudo, String mail, String adressePhysique, String motDePasse) {
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
+        this.pseudo = pseudo;
         this.adressePhysique = adressePhysique;
         this.motDePasse = motDePasse;
-        this.publications = new ArrayList<Publication>();
     }
 
     //getter 
