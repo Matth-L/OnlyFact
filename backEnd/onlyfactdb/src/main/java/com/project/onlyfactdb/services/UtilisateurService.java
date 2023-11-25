@@ -1,5 +1,7 @@
 package com.project.onlyfactdb.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +32,7 @@ public class UtilisateurService {
     }
     
     public Utilisateur updateUtilisateur(Utilisateur utilisateur) {
-        if (utilisateurRepo.existsById(utilisateur.getId())) {
+        if (utilisateurRepo.existsById(utilisateur.getId())) { //On doit ajouter l'id dans le RequestBody
             return utilisateurRepo.save(utilisateur);
         } else {
             throw new RuntimeException("Utilisateur not found for id: " + utilisateur.getId());
