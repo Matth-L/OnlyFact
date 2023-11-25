@@ -33,6 +33,8 @@ public class Utilisateur {
 
     private String adressePhysique;
     private String motDePasse;
+    private boolean isAdmin;
+    private boolean isBanned;
 
     //Attributs d'associations
     //@OneToMany(cascade = CascadeType.ALL)
@@ -40,13 +42,15 @@ public class Utilisateur {
    // private List<Publication> publications;
 
     //Constructeur
-    public Utilisateur(String nom, String prenom, String pseudo, String mail, String adressePhysique, String motDePasse) {
+    public Utilisateur(String nom, String prenom, String pseudo, String mail, String adressePhysique, String motDePasse, boolean isAdmin, boolean isBanned) {
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.pseudo = pseudo;
         this.adressePhysique = adressePhysique;
         this.motDePasse = motDePasse;
+        this.isAdmin = isAdmin;
+        this.isBanned = isBanned;
     }
 
     //getters
@@ -77,6 +81,12 @@ public class Utilisateur {
     public String getMotDePasse() {
         return this.motDePasse;
     }
+    public boolean getIsAdmin() {
+        return this.isAdmin;
+    }
+    public boolean getIsBanned() {
+        return this.isBanned;
+    }
 
     //setters
     public void setId(Long id) {
@@ -106,4 +116,12 @@ public class Utilisateur {
     public void setMotDePasse(String motDePasse) {
         this.motDePasse = motDePasse;
     } 
+
+    public void setIsAdmin(boolean isAdmin) {
+        this.isAdmin = isAdmin;
+    }
+
+    public void setIsBanned(boolean isBanned) {
+        this.isBanned = isBanned;
+    }
 }

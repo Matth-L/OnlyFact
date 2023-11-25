@@ -24,7 +24,7 @@ public class Publication {
     private String content;
     
     @ManyToOne
-    @JoinColumn(name="author_id")
+    @JoinColumn(name="id_utilisateur")
     private Utilisateur author;
      
 }
