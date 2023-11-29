@@ -1,41 +1,8 @@
-<div class="header">
-	<div class="nav-header">
-
-		<div class="login-icon">
-			<span style="padding: 0.5rem;">Logo + OnlyFact</span>
-		</div>
-		<!-- <div class="nav-list">
-		<li><a href="">Catégories</a></li>
-	</div>    -->
-		<div class="search-section">
-			<input class="search" type="search" placeholder="Rechercher">
-		</div>
-		<div class="login-section">
-			<div class="login-icon">
-				<span class="icon-user" style="padding: 0.5rem;"></span>
-			</div>
-			<div class="login-text">
-				<span style="padding: 0.5rem;">Se connecter</span>
-			</div>
-		</div>
-		<div class="login-section">
-			<div class="login-icon">
-				<span class="icon-user" style="padding: 0.5rem;"></span>
-			</div>
-			<div class="login-text">
-				<span style="padding: 0.5rem;">S'inscrire</span>
-			</div>
-		</div>
-	</div>
+<app-topbar></app-topbar>
+<div [formGroup]="myForm" class="input-wrapper">
+    <input type="text" formControlName="fact" class="fact-input" placeholder="Entrez votre fact">
+    <button mat-raised-button color="primary" class = "button-fact-input" (click)="onClick()">Envoyer</button>
 </div>
-<div class="content">
-	<div class="intro-container">
-		<h1>Bienvenue sur OnlyFact</h1>
-		<p>Rejoignez la discussion, postez des FACTS</p>
-		<a routerLink="/topics" class="btn btn-primary">Voir les sujets</a>
-		<a routerLink="/assistance" class="btn btn-secondary">Page d'Assistance</a>
-		<a routerLink="/login" class="btn btn-primary">Se connecter</a>
-		<a routerLink="/register" class="btn btn-secondary">S'inscrire</a>
-		<a routerLink="/profile" class="btn btn-primary">Mon profil</a>
-	</div>
+<div *ngFor="let value of inputValues" class="new-element">
+    <app-post-card>{{ value }}</app-post-card>
 </div>

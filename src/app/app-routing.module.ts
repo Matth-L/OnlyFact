@@ -3,9 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
-
-  // Autres routes
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Rediriger vers la page d'accueil par défaut
+ 
 ];
 
 @NgModule({
