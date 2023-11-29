@@ -3,7 +3,7 @@
     <div class="Logo">
       <img class = "img-logo" src="../../assets/img/Logo.png">
       <div class="dropdown">
-        <button mat-raised-button class="dropbtn">Catégories</button>
+        <button mat-raised-button color="primary" class="dropbtn">Catégories</button>
         <div class="dropdown-content">
           <a href="#">Sport</a>
           <a href="#">Link 2</a>
@@ -15,30 +15,8 @@
       <input class="search" type="search" placeholder="Rechercher">
     </div>
     <div class="login-section">
-      <button mat-raised-button color="primary" class="button-login">Se connecter</button>
-      <button mat-raised-button color="primary" class="button-register">S'inscrire</button>
+      <button mat-raised-button color="primary" class="button-login" (click)="goToLogin()">Se connecter</button>
+      <button mat-raised-button color="primary" class="button-register" (click)="goToLogin()">S'inscrire</button>
     </div>
   </div>
 </div>
-
-<!-- <div class="card">
-  <div class="header">
-    <h4 class="title">bonjour</h4>
-    <p class="category">{{ subtitle }}</p>
-  </div>
-  <div class="content">
-    <div  class="ct-chart ">oui</div>
-
-    <div class="footer">
-      <div class="legend">
-        <span *ngFor="let item of legendItems">
-          <i [ngClass]="item.imageClass"></i> {{ item.title }}
-        </span>
-      </div>
-      <hr *ngIf="withHr">
-      <div class="stats">
-        <i [ngClass]="footerIconClass"></i> {{ footerText }}
-      </div>
-    </div>
-  </div>
-</div> -->

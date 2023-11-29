@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PostCardComponent } from './post-card/post-card.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TopbarComponent,
     LoginPageComponent,
     PostCardComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

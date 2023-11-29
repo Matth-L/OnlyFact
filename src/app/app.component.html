@@ -1,8 +1,1 @@
-<app-topbar></app-topbar>
-<div [formGroup]="myForm" class="input-wrapper">
-    <input type="text" formControlName="fact" class="fact-input" placeholder="Entrez votre fact">
-    <button mat-raised-button color="primary" class = "button-fact-input" (click)="onClick()">Envoyer</button>
-</div>
-<div *ngFor="let value of inputValues" class="new-element">
-    <app-post-card>{{ value }}</app-post-card>
-</div>
+<router-outlet></router-outlet>
