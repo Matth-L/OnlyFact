@@ -1,10 +1,10 @@
 package com.project.onlyfactdb.services;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.project.onlyfactdb.model.Utilisateur;
 import com.project.onlyfactdb.repositories.UtilisateurRepository;
 
@@ -45,5 +45,14 @@ public class UtilisateurService {
         } else {
             throw new RuntimeException("Utilisateur not found for id: " + id);
         }
+    }
+
+    public ArrayList<Utilisateur> getAllUtilisateur() {
+        ArrayList<Utilisateur> utilsateurs = new ArrayList<Utilisateur>();
+        Iterable<Utilisateur> utilisateursIterable = utilisateurRepo.findAll();
+        utilisateursIterable.forEach((user) -> {
+            utilsateurs.add(user);
+        });
+        return utilsateurs;
     }
 }
