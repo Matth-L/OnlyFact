@@ -2,3 +2,5 @@
 /home/matth-l/Documents/2A_ENSIIE_HPC/PIMA/OnlyFact/backEnd/onlyFactSpring/onlyFact/src/main/java/io/project/spring/onlyFact/controler/UtilisateurControleur.java
 /home/matth-l/Documents/2A_ENSIIE_HPC/PIMA/OnlyFact/backEnd/onlyFactSpring/onlyFact/src/main/java/io/project/spring/onlyFact/model/Utilisateur.java
 /home/matth-l/Documents/2A_ENSIIE_HPC/PIMA/OnlyFact/backEnd/onlyFactSpring/onlyFact/src/main/java/io/project/spring/onlyFact/OnlyFactApplication.java
+/home/matth-l/Documents/2A_ENSIIE_HPC/PIMA/OnlyFact/backEnd/onlyFactSpring/onlyFact/src/main/java/io/project/spring/onlyFact/model/Publication.java
+/home/matth-l/Documents/2A_ENSIIE_HPC/PIMA/OnlyFact/backEnd/onlyFactSpring/onlyFact/src/main/java/io/project/spring/onlyFact/model/Poste.java
