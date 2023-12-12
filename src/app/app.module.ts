@@ -11,9 +11,11 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { PostCardComponent } from './post-card/post-card.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HomePageConnectedComponent } from './home-page-connected/home-page-connected.component';
+import { TopbarConnectedComponent } from './topbar-connected/topbar-connected.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     LoginPageComponent,
     PostCardComponent,
     HomePageComponent,
+    HomePageConnectedComponent,
+    TopbarConnectedComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatListModule,
     MatInputModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

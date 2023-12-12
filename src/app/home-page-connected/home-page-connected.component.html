@@ -1,0 +1,8 @@
+<app-topbar-connected></app-topbar-connected>
+<form #addPublicationForm="ngForm" (ngSubmit)="onSubmitPublication()" class="input-wrapper" name="addPub">
+    <input id="content" [(ngModel)]="addPub.content" name="content" type="text" class="form-control fact-input" placeholder="Entrez votre fact" required>
+    <button [disabled]="addPublicationForm.invalid" mat-raised-button color="primary" class = "button-fact-input" type="submit">Envoyer</button>
+</form>
+<div class="new-element">
+    <app-post-card></app-post-card>
+</div>

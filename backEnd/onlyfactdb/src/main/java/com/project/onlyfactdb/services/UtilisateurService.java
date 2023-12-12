@@ -55,4 +55,19 @@ public class UtilisateurService {
         });
         return utilsateurs;
     }
+    
+    public Utilisateur loginUtilisateur(String mail, String motDePasse) {
+        Utilisateur u = getUtilisateurByMail(mail);
+        if(u != null && u.getMotDePasse().equals(motDePasse)) {
+            return u;
+        }
+        else {
+            return null;
+        }
+    }
+    
+    public Utilisateur getUtilisateurByMail(String mail) {
+        return this.utilisateurRepo.getUtilisateurByMail(mail);
+    }
+
 }

@@ -27,13 +27,10 @@ public class Utilisateur {
     private Long id;
     
     private String nom;
-    private String prenom;
-    private String pseudo;
 
     @Column(unique = true)
     private String mail;
 
-    private String adressePhysique;
     private String motDePasse;
     private boolean isAdmin;
     private boolean isBanned;
@@ -44,15 +41,12 @@ public class Utilisateur {
     private List<Publication> publications;
 
     //Constructeur
-    public Utilisateur(String nom, String prenom, String pseudo, String mail, String adressePhysique, String motDePasse, boolean isAdmin, boolean isBanned) {
+    public Utilisateur(String nom, String mail, String motDePasse) {
         this.nom = nom;
-        this.prenom = prenom;
         this.mail = mail;
-        this.pseudo = pseudo;
-        this.adressePhysique = adressePhysique;
         this.motDePasse = motDePasse;
-        this.isAdmin = isAdmin;
-        this.isBanned = isBanned;
+        this.isAdmin = false;
+        this.isBanned = false;
         this.publications = new ArrayList<Publication>();
     }
 
@@ -65,20 +59,8 @@ public class Utilisateur {
         return this.nom;
     }
 
-    public String getPrenom() {
-        return this.prenom;
-    }
-
-    public String getPseudo() {
-        return this.pseudo;
-    }
-
     public String getMail() {
         return this.mail;
-    }
-
-    public String getAdressePhysique() {
-        return this.adressePhysique;
     }
 
     public String getMotDePasse() {
@@ -96,28 +78,13 @@ public class Utilisateur {
     }
 
     //setters
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public void setPseudo(String pseudo) {
-        this.pseudo = pseudo;
-    }
-
     public void setMail(String mail) {
         this.mail = mail;
-    }
-
-    public void setAdressePhysique(String adressePhysique) {
-        this.adressePhysique = adressePhysique;
     }
 
     public void setMotDePasse(String motDePasse) {

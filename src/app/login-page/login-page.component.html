@@ -3,48 +3,48 @@
         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Connexion</label>
         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Nouveau compte</label>
         <div class="login-form">
-            <div class="sign-in-htm">
-                <div class="group">
-                    <label for="user" class="label">Nom d'utilisateur</label>
-                    <input id="user" type="text" class="input">
+            <form #connectForm="ngForm" (ngSubmit)="onConnectUtilisateur()" class="sign-in-htm" name="connect">
+                <div class="form-group">
+                    <label for="connect-mail" class="label">Adresse Mail</label>
+                    <input id="connect-mail" [(ngModel)]="connect.mail" #mail="ngModel" name="mail" type="text" class="form-control" required>
                 </div>
-                <div class="group">
-                    <label for="pass" class="label">Mot de passe</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                <div class="form-group">
+                    <label for="connect-motDePasse" class="label">Mot de passe</label>
+                    <input id="connect-motDePasse" [(ngModel)]="connect.motDePasse" #motDePasse="ngModel" name="motDePasse" type="password" class="form-control" data-type="password" required>
                 </div>
-                <div class="group">
+                <!--<div class="form-group">
                     <input id="check" type="checkbox" class="check" checked>
                     <label for="check"><span class="icon"></span> Rester connecté</label>
-                </div>
+                </div> -->
                 <div class="return">
-                    <button mat-raised-button color="primary" class="return">Sign In</button>
+                    <button [disabled]="connectForm.invalid" mat-raised-button color="primary" class="return" type="submit">Sign In</button>
                 </div>
                 <div class="hr"></div>
                 <div class="return">
                     <!-- <a href="#forgot">Mot de passe oublié ?</a> -->
                     <button mat-raised-button color="primary" class="return" (click)="goToHome()">Retour</button>
                 </div>
-            </div>
-            <div class="sign-up-htm">
-                <div class="group">
-                    <label for="user" class="label">Nom d'utilisateur</label>
-                    <input id="user" type="text" class="input">
+            </form>
+            <form #addForm="ngForm" (ngSubmit)="onAddUtilisateur(addForm)" class="sign-up-htm">
+                <div class="form-group">
+                    <label for="add-nom" class="label">Nom d'utilisateur</label>
+                    <input id="add-nom" ngModel name="nom" type="text" class="form-control" required>
                 </div>
-                <div class="group">
-                    <label for="pass" class="label">Mot de passe</label>
-                    <input id="pass" type="password" class="input" data-type="password">
+                <div class="form-group">
+                    <label for="add-motDePasse" class="label">Mot de passe</label>
+                    <input id="add-motDePasse" ngModel name="motDePasse" type="password" class="form-control" data-type="password" required>
                 </div>
-                <div class="group">
-                    <label for="pass" class="label">Verification mot de passe</label>
-                    <input id="pass" type="password" class="input" data-type="password">
-                </div>
-                <div class="group">
-                    <label for="pass" class="label">Adresse mail</label>
-                    <input id="pass" type="text" class="input">
+                <!--<div class="form-group">
+                    <label for="mdp2" class="label">Verification mot de passe</label>
+                    <input id="mdp2" name="mdp2" type="password" class="form-control" data-type="password" required>
+                </div> -->
+                <div class="form-group">
+                    <label for="add-mail" class="label">Adresse mail</label>
+                    <input id="add-mail" ngModel name="mail" type="text" class="form-control" required>
                 </div>
                 <div class="return">
                     <!-- <input type="submit" class="button" value="Sign Up"> -->
-                    <button mat-raised-button color="primary" class="return">Sign Up</button>
+                    <button [disabled]="addForm.invalid" mat-raised-button color="primary" class="return" type="submit">Sign Up</button>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -53,6 +53,6 @@
                 <div class = "return">
                     <button mat-raised-button color="primary" class="return" (click)="goToHome()">Retour</button>
                 </div>
-        </div>
+        </form>
     </div>
 </div>

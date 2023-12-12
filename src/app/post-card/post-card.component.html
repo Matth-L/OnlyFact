@@ -1,5 +1,15 @@
-<div class="card-wrapper">
+
+<ng-container *ngIf="publications.length > 0; else noPublications">
+    <div *ngFor="let publication of publications" class="card-wrapper">
         <div class="card-body">
-            <p class="card-text">{{valToDisplay}}</p>
+            <p class="card-text">{{publication.content}}</p>
+            <p class="card-body">{{publication.author!.nom}}</p>
         </div>
-</div>
+    </div>
+</ng-container>
+
+<ng-template #noPublications>
+    <div>
+        <p>Aucune publication pour le moment !</p>
+    </div>
+</ng-template>

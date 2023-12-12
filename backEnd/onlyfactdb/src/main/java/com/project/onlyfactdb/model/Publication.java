@@ -1,7 +1,5 @@
 package com.project.onlyfactdb.model;
 
-import org.hibernate.annotations.CollectionId;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,9 +24,6 @@ public class Publication {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name= "id_publication")
     private long id;
-
-    @Column(name= "title")
-    private String title;
     
     @Column(name= "content")
     private String content;
@@ -38,8 +33,7 @@ public class Publication {
     private Utilisateur author;
 
     //Constructeur
-    public Publication(String title, String content, Utilisateur author) {
-        this.title = title;
+    public Publication(String content, Utilisateur author) {
         this.content = content;
         this.author = author;
     }
@@ -49,29 +43,21 @@ public class Publication {
         return this.id;
     }
 
-    public String getTitle() {
-        return this.title;
-    }
-
     public String getContent() {
         return this.content;
     }
 
-    public Utilisateur getUtilisateur() {
+    public Utilisateur getAuthor() {
         return this.author;
     }
 
     //setter
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public void setContent(String content) {
         this.content = content;
     }
 
-    public void setUtilisateur(Utilisateur utilisateur) {
+    public void setAuthor(Utilisateur utilisateur) {
         this.author = utilisateur;
     }
      

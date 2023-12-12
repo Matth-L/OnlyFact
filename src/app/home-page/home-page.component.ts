@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PublicationService } from '../services/publication.service';
+import { Publication } from '../models/publications';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-home-page',
@@ -8,20 +11,4 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomePageComponent {
   title = 'OnlyFact';
-  myForm: FormGroup;
-  inputValues: string[] = [];
-
-  constructor(private formBuilder: FormBuilder) {
-    this.myForm = this.formBuilder.group({
-      fact: ['', Validators.required]
-    });
-  }
-
-  public onClick() {
-    if (this.myForm.valid) {
-      const inputValue = this.myForm.value.fact;
-      this.inputValues.push(inputValue);
-      this.myForm.reset();
-    }
-  }
 }

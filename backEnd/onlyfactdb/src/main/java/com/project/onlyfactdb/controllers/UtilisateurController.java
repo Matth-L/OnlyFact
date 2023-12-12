@@ -8,10 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.project.onlyfactdb.model.ConnexionUtilisateur;
 import com.project.onlyfactdb.model.Utilisateur;
 import com.project.onlyfactdb.services.UtilisateurService;
 
@@ -24,7 +23,7 @@ public class UtilisateurController {
         this.utilisateurService = u;
     }
 
-    @PutMapping("/utilisateur")
+    @PostMapping("/utilisateur")
     public void ajouterUtilisateur(@RequestBody Utilisateur utilisateur) {
         utilisateurService.ajouterUtilisateur(utilisateur);
     }
@@ -34,7 +33,7 @@ public class UtilisateurController {
         return utilisateurService.getUtilisateur(id);
     }
     
-    @PostMapping("/utilisateur")
+    @PutMapping("/utilisateur")
     public Utilisateur updateUtilisateur(@RequestBody Utilisateur utilisateur) {
         return utilisateurService.updateUtilisateur(utilisateur);
     }
@@ -47,5 +46,15 @@ public class UtilisateurController {
     @GetMapping("/utilisateurs")
     public ArrayList<Utilisateur> getAllUtilisateurs() {
         return utilisateurService.getAllUtilisateur();
+    }
+
+    @PostMapping("/utilisateur/login")
+    public Utilisateur loginUtilisateur(@RequestBody ConnexionUtilisateur cu) {
+        return utilisateurService.loginUtilisateur(cu.getMail(), cu.getMotDePasse());
+    }
+
+    @GetMapping("/utilisateur/byMail/{mail}")
+    public Utilisateur getUtilisateurByMail(@PathVariable String mail) {
+       return utilisateurService.getUtilisateurByMail(mail);
     }
 }
