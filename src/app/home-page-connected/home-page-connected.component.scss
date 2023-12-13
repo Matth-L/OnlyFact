@@ -1,0 +1,25 @@
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.fact-input {
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+}
+
+.button-fact-input {
+    display: flex;
+}
+
+.new-element {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+}

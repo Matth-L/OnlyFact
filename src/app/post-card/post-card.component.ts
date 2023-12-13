@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { Publication } from '../models/publications';
@@ -8,7 +8,7 @@ import { PublicationService } from '../services/publication.service';
 @Component({
   selector: 'app-post-card',
   templateUrl: './post-card.component.html',
-  styleUrls: ['./post-card.component.scss']
+  styleUrls: ['./post-card.component.scss'],
 })
 export class PostCardComponent {
 

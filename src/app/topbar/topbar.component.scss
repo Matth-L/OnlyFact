@@ -17,17 +17,20 @@
 .Logo {
   display: flex;
   align-items: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .search-section {
   flex-grow: 1; /* Utilisation de flex-grow pour occuper tout l'espace disponible */
-  margin-left: 1.5rem;
 }
 
  .dropdown {
    position: relative;
    display: inline-block;
-   margin-left: 1rem;
+   margin-left: 0.5rem;
+   margin-right: 0.5rem;
+
  }
 
 /* Dropdown Button */
@@ -101,6 +104,7 @@
   border-radius: 69px;
   padding: 10px 20px;
   margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .img-logo {

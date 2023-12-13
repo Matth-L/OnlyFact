@@ -3,13 +3,13 @@
     <div *ngFor="let publication of publications" class="card-wrapper">
         <div class="card-body">
             <p class="card-text">{{publication.content}}</p>
-            <p class="card-body">{{publication.author!.nom}}</p>
+            <p class="card-text">{{publication.author!.nom}}</p>
         </div>
     </div>
 </ng-container>
 
 <ng-template #noPublications>
-    <div>
+    <div class="no-publication">
         <p>Aucune publication pour le moment !</p>
     </div>
 </ng-template>
