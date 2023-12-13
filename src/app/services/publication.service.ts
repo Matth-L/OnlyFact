@@ -9,6 +9,8 @@ import { Observable } from "rxjs";
 export class PublicationService {
     private apiServeUrl = 'http://localhost:8080';
 
+    publications: Publication[] = [];
+
     constructor(private http: HttpClient) { }
 
     public getPublications(): Observable<Publication[]> {

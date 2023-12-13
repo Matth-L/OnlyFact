@@ -9,6 +9,7 @@ import { PublicationService } from '../services/publication.service';
   selector: 'app-post-card',
   templateUrl: './post-card.component.html',
   styleUrls: ['./post-card.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PostCardComponent {
 

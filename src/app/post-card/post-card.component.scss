@@ -1,11 +1,30 @@
 .card-body {
     display: flex;
-    border-bottom: 2px solid rgb(0, 0, 0);
-    width: 50%;
+    flex-direction: column;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 90%;
+    padding: 10px;
 }
 
 .card-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    margin: 10px;
+}
+
+.card-text p {
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+
+app-post-card {
+    width: 100%;
+}
+
+.mat-body p, .mat-body-2 p, .mat-typography .mat-body p, .mat-typography .mat-body-2 p, .mat-typography p {
+    margin: 5px;
 }

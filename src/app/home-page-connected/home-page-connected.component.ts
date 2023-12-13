@@ -35,7 +35,8 @@ export class HomePageConnectedComponent {
   public onSubmitPublication(): void {
     this.publicationService.addPublication(this.addPub).subscribe({
       next: (response: Publication) => {
-        
+        this.publicationService.addPublication(response);
+        this.addPub.content = '';
       },
       error: (error: HttpErrorResponse) => {
         alert(error.message);

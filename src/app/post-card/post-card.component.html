@@ -2,8 +2,8 @@
 <ng-container *ngIf="publications.length > 0; else noPublications">
     <div *ngFor="let publication of publications" class="card-wrapper">
         <div class="card-body">
-            <p class="card-text">{{publication.content}}</p>
-            <p class="card-text">{{publication.author!.nom}}</p>
+            <p class="card-text">Fact: {{publication.content}}</p>
+            <p class="card-text">Auteur: {{publication.author!.nom}}</p>
         </div>
     </div>
 </ng-container>
