@@ -5,13 +5,14 @@ import { Utilisateur } from "../models/utilisateurs";
     providedIn: 'root' 
 })
 export class SharedObjectService {
-    private utilisateur: Utilisateur | undefined;
+    private storageKey = 'userCo';
 
-    setSharedObjectUtilisateur(utilisateur : Utilisateur) {
-        this.utilisateur = utilisateur;
+    setSharedObjectUtilisateur(utilisateur : Utilisateur): void {
+        localStorage.setItem(this.storageKey, JSON.stringify(utilisateur));
     }
 
-    getSharedObjectUtilisateur() {
-        return this.utilisateur
+    getSharedObjectUtilisateur(): Utilisateur | null {
+        const utilisateurString = localStorage.getItem(this.storageKey);
+        return utilisateurString ? JSON.parse(utilisateurString) : null;
     }
 }

@@ -1,9 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { Publication } from '../models/publications';
 import { HttpErrorResponse } from '@angular/common/http';
 import { PublicationService } from '../services/publication.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-card',
@@ -13,21 +14,8 @@ import { PublicationService } from '../services/publication.service';
 })
 export class PostCardComponent {
 
-  public publications: Publication[] = [];
+  publications$: Observable<Publication[]> = this.publicationService.getPublications();
 
   constructor(private publicationService: PublicationService) { 
-  }
-
-  ngOnInit() {
-    this.getPublications();
-  }
-
-  public getPublications(): void {
-    this.publicationService.getPublications().subscribe(
-        {
-          next: (response: Publication[]) => this.publications = response,
-          error: (error: HttpErrorResponse) => alert(error.message)
-        }
-    )
   }
 }

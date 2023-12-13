@@ -1,6 +1,6 @@
 
-<ng-container *ngIf="publications.length > 0; else noPublications">
-    <div *ngFor="let publication of publications" class="card-wrapper">
+<ng-container *ngIf="(publications$ | async)!.length > 0; else noPublications">
+    <div *ngFor="let publication of publications$ | async" class="card-wrapper">
         <div class="card-body">
             <p class="card-text">Fact: {{publication.content}}</p>
             <p class="card-text">Auteur: {{publication.author!.nom}}</p>

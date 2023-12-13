@@ -1,15 +1,13 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Publication } from "../models/publications";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable, tap } from "rxjs";
 
 @Injectable({
     providedIn: 'root' 
 })
 export class PublicationService {
     private apiServeUrl = 'http://localhost:8080';
-
-    publications: Publication[] = [];
 
     constructor(private http: HttpClient) { }
 
@@ -18,7 +16,6 @@ export class PublicationService {
     }
 
     public addPublication(publication: Publication): Observable<Publication> {
-        console.log(publication);
         return this.http.post<Publication>(`${this.apiServeUrl}/publication`, publication);
     }
 }
